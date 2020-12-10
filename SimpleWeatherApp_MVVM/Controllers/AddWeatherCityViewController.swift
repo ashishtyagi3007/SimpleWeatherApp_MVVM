@@ -13,12 +13,9 @@ class AddWeatherCityViewController: UIViewController {
     
     @IBAction func saveCityButtonPressed() {
         
-        
     }
     
     @IBAction func close() {
         self.dismiss(animated: true, completion: nil)
     }
-    
-
 }

@@ -18,6 +18,7 @@
 		B1309070258232E00040C7E7 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B130906F258232E00040C7E7 /* Webservice.swift */; };
 		B1309075258257610040C7E7 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1309074258257610040C7E7 /* WeatherListViewModel.swift */; };
 		B130907B258344200040C7E7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B130907A258344200040C7E7 /* SettingsTableViewController.swift */; };
+		B130907E2583530B0040C7E7 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B130907D2583530B0040C7E7 /* SettingsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B130906F258232E00040C7E7 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		B1309074258257610040C7E7 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
 		B130907A258344200040C7E7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		B130907D2583530B0040C7E7 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				B1309074258257610040C7E7 /* WeatherListViewModel.swift */,
+				B130907D2583530B0040C7E7 /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				B130906A258202460040C7E7 /* WeatherCell.swift in Sources */,
 				B1309066258201E00040C7E7 /* AddWeatherCityViewController.swift in Sources */,
 				B130904C2581F8640040C7E7 /* SceneDelegate.swift in Sources */,
+				B130907E2583530B0040C7E7 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

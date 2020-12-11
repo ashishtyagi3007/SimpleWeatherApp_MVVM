@@ -9,6 +9,9 @@ import UIKit
 
 class WeatherListTableViewController: UITableViewController {
     
+    fileprivate var weatherListViewModel = WeatherListViewModel()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -23,16 +26,41 @@ class WeatherListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.weatherListViewModel.numberOfRows(section)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let nav = segue.destination as? UINavigationController else {
+            fatalError("NavigationController not found")
+        }
+        
+        guard let addWeatherCityVC = nav.viewControllers.first as? AddWeatherCityViewController else {
+            fatalError("AddWeatherCityController not found")
+        }
+        
+        addWeatherCityVC.delegate = self
+        
+    }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
         
-        cell.cityNameLabel.text = "Houston"
-        cell.temperatureLabel.text = "70°"
+        let weatherVM = self.weatherListViewModel.modelAt(indexPath.row)
+        
+        cell.configure(weatherVM)
+       
         return cell
     }
     
+}
+
+extension WeatherListTableViewController: AddWeatherDelegate {
+    
+    func addWeatherDidSave(vm: WeatherViewModel) {
+        self.weatherListViewModel.addWeatherViewModel(vm)
+        self.tableView.reloadData()
+    }
 }

@@ -10,6 +10,7 @@ import UIKit
 class WeatherListTableViewController: UITableViewController {
     
     fileprivate var weatherListViewModel = WeatherListViewModel()
+    private var lastUnitSelection :Unit = Unit(rawValue: "imperial") ?? Unit.init(rawValue: "metric")!
 
     
     override func viewDidLoad() {
@@ -65,9 +66,11 @@ extension WeatherListTableViewController {
             fatalError("NavigationController not found")
         }
         
-        guard let settingsTableVC = nav.viewControllers.first as? SettingsTableViewController else {
-            fatalError("AddWeatherCityController not found")
+        guard let settingsTVC = nav.viewControllers.first as? SettingsTableViewController else {
+            fatalError("SettingsTableViewController not found")
         }
+        
+        settingsTVC.delegate = self
         
     }
     
@@ -94,4 +97,18 @@ extension WeatherListTableViewController: AddWeatherDelegate {
         self.weatherListViewModel.addWeatherViewModel(vm)
         self.tableView.reloadData()
     }
+}
+
+extension WeatherListTableViewController: SettingsDelegate {
+    
+    func settingsDone(vm: SettingsViewModel) {
+        
+            if self.lastUnitSelection.rawValue != vm.selectedUnit.rawValue {
+                self.weatherListViewModel.updateUnit(to: vm.selectedUnit)
+                self.tableView.reloadData()
+                self.lastUnitSelection = Unit(rawValue: vm.selectedUnit.rawValue)!
+            }
+        
+    }
+    
 }

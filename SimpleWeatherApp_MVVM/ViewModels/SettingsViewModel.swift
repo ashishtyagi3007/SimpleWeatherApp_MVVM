@@ -32,4 +32,21 @@ struct SettingsViewModel {
     
     let units = Unit.allCases
     
+    var selectedUnit: Unit {
+        get {
+            
+            let userDefaults = UserDefaults.standard
+            var unitValue = ""
+            if let value = userDefaults.value(forKey: "unit") as? String {
+                unitValue = value
+            }
+            
+            return Unit(rawValue: unitValue)!
+            
+        } set {
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(newValue.rawValue, forKey: "unit")
+        }
+    }
+    
 }

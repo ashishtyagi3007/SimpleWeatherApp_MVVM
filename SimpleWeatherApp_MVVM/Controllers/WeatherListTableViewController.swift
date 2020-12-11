@@ -29,7 +29,49 @@ class WeatherListTableViewController: UITableViewController {
         return self.weatherListViewModel.numberOfRows(section)
     }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
+        
+        let weatherVM = self.weatherListViewModel.modelAt(indexPath.row)
+        
+        cell.configure(weatherVM)
+       
+        return cell
+    }
+    
+}
+
+extension WeatherListTableViewController {
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "AddWeatherCityViewController" {
+            
+            prepareSegueForAddWeatherCityViewController(segue: segue)
+            
+        } else if segue.identifier == "SettingsTableViewController" {
+            
+            prepareSegueForSettingsTableViewController(segue: segue)
+            
+        }
+       
+        
+    }
+    
+    private func prepareSegueForSettingsTableViewController(segue: UIStoryboardSegue) {
+
+        guard let nav = segue.destination as? UINavigationController else {
+            fatalError("NavigationController not found")
+        }
+        
+        guard let settingsTableVC = nav.viewControllers.first as? SettingsTableViewController else {
+            fatalError("AddWeatherCityController not found")
+        }
+        
+    }
+    
+    private func prepareSegueForAddWeatherCityViewController(segue: UIStoryboardSegue) {
         
         guard let nav = segue.destination as? UINavigationController else {
             fatalError("NavigationController not found")
@@ -43,19 +85,8 @@ class WeatherListTableViewController: UITableViewController {
         
     }
     
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
-        
-        let weatherVM = self.weatherListViewModel.modelAt(indexPath.row)
-        
-        cell.configure(weatherVM)
-       
-        return cell
-    }
-    
 }
+
 
 extension WeatherListTableViewController: AddWeatherDelegate {
     

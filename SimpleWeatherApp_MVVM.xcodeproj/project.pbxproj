@@ -17,6 +17,7 @@
 		B130906A258202460040C7E7 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1309069258202460040C7E7 /* WeatherCell.swift */; };
 		B1309070258232E00040C7E7 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B130906F258232E00040C7E7 /* Webservice.swift */; };
 		B1309075258257610040C7E7 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1309074258257610040C7E7 /* WeatherListViewModel.swift */; };
+		B130907B258344200040C7E7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B130907A258344200040C7E7 /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B1309069258202460040C7E7 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		B130906F258232E00040C7E7 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		B1309074258257610040C7E7 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
+		B130907A258344200040C7E7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				B1309061258201C70040C7E7 /* WeatherListTableViewController.swift */,
 				B1309065258201E00040C7E7 /* AddWeatherCityViewController.swift */,
+				B130907A258344200040C7E7 /* SettingsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				B130904A2581F8640040C7E7 /* AppDelegate.swift in Sources */,
 				B1309070258232E00040C7E7 /* Webservice.swift in Sources */,
 				B1309075258257610040C7E7 /* WeatherListViewModel.swift in Sources */,
+				B130907B258344200040C7E7 /* SettingsTableViewController.swift in Sources */,
 				B130906A258202460040C7E7 /* WeatherCell.swift in Sources */,
 				B1309066258201E00040C7E7 /* AddWeatherCityViewController.swift in Sources */,
 				B130904C2581F8640040C7E7 /* SceneDelegate.swift in Sources */,
